@@ -54,7 +54,7 @@ JEP是一个用于解析和计算数学表达式的Java类库。通过使用这�
 			jep.addVariable("x", 10);
 			jep.parse("x+1");
 			Object result = jep.evaluate();
-
+			
 			System.out.println("x + 1 = " + result);
 		} catch (JepException e) {
 			System.out.println("An error occurred: " + e.getMessage());
