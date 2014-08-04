@@ -42,4 +42,22 @@ JEP是一个用于解析和计算数学表达式的Java类库。通过使用这�
 1.  下载JEP包 
 2.  解压包
 3.  移动jep-java-x.x.x.jar文件(位于主目录)到所选择的目录中
+4.  重要：当编译程序时，确保Java编译器能够找到JEP 类，它需要知道它们的位置。你需要设置IDE中jar的位置来让编译器发现类库（如何去做请查看你的IDE帮助手册），如果你不是用IDE，你需要把jar加入到你的CLASSPATH环境变量中，例如 C:\java\packages\jep-java=x.x.x.jar，这取决于你把jar放到哪一路径。
+5.  将以下代码加入到你的程序中。
+    import com.singularsys.jep.Jep;
+import com.singularsys.jep.JepException;
+public class Demo {
+	public static void main(String[] args) {
+		Jep jep = new Jep();
+		try {
+			jep.addVariable("x", 10);
+			jep.parse("x+1");
+			Object result = jep.evaluate();
+
+			System.out.println("x + 1 = " + result);
+		} catch (JepException e) {
+			System.out.println("An error occurred: " + e.getMessage());
+		}
+	}
+    }
 
