@@ -42,5 +42,7 @@ JEP是一个用于解析和计算数学表达式的Java类库。通过使用这�
 2. 解压包 
 3. 移动jep-java-x.x.x.jar文件(位于主目录)到所选择的目录中 
 
-
+1.  Bird
+2.  McHale
+3.  Parish
 
