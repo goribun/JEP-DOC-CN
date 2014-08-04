@@ -46,10 +46,10 @@ JEP是一个用于解析和计算数学表达式的Java类库。通过使用这�
 5.  将以下代码加入到你的程序中。<br>
 			import com.singularsys.jep.Jep;
 			import com.singularsys.jep.JepException;
-public class Demo {
-	public static void main(String[] args) {
-		Jep jep = new Jep();
-		try {
+			public class Demo {
+				public static void main(String[] args) {
+					Jep jep = new Jep();
+					try {
 			jep.addVariable("x", 10);
 			jep.parse("x+1");
 			Object result = jep.evaluate();
@@ -58,6 +58,6 @@ public class Demo {
 		} catch (JepException e) {
 			System.out.println("An error occurred: " + e.getMessage());
 		}
-	}
-    }
+				}
+			    }
 
