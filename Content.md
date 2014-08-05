@@ -85,7 +85,7 @@ JEP是一个用于解析和计算数学表达式的Java类库。通过使用这�
  <td >true</td><td >布尔常量（Boolean.TRUE）</td>
  </tr>
  <tr>
- <td >false</td><td ><p >布尔常量（Boolean.FALSE）</td>
+ <td >false</td><td >布尔常量（Boolean.FALSE）</td>
  </tr>
  <tr>
  <td >i</td><td >虚数单位</td>
