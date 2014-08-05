@@ -166,3 +166,20 @@ Jep可以同时处理多个表达式。简单的方法是在多个字符串中�
 			}
 		} catch (JepException e) {
 		}
+
+9.使用RealEvaluator快速计算
+----
+从Jep 3.2到Jep 3.3，通过 FastEvaluator代替默认的StandardEvaluator组件使得计算速度有了重大提升。然而，如果你的表达式操作仅仅是单精度浮点数，你可以实现一个额外的RealEvaluator可以被加载通过Jep构造器Jep jep = new Jep(new RealEvaluator())；或者通过在构造器之后设置计算器jep.setComponent(new RealEvaluator())。<br>
+从Jep 3.2到Jep 3.3，通过 FastEvaluator代替默认的StandardEvaluator组件使得计算速度有了重大提升。然而，如果你的表达式操作仅仅是单精度浮点数，你可以实现一个额外的RealEvaluator可以被加载通过Jep构造器Jep jep = new Jep(new RealEvaluator())；或者通过在构造器之后设置计算器jep.setComponent(new RealEvaluator())。<br>
+
+三、变量
+####
+1.基础
+----
+变量被Variable类表示并储存在VariableTable中。变量的值通过Jep.addVariable(String name,Object val)方法设置，通过Object Jep.getVariableValue(String name)方法检索。addVariable()方法也可以被用于改变已经存在的变量的值。对于double值，用 Jep.addVariable(String, double, double)方法。进一步的方法，getVariable(String)，返回Variable对象。这个类允许变量被观察，并提供了一个略微快速的方法getting和setting变量值。
+
+2.未声明和未定义的变量
+----
+在解析期间，解析器查找是否存在变量。Jep.setAllowUndeclared(boolean flag)为未声明变量设置行为：
+1. **允许未声明变量 (默认)：**当解析表达式时，未声明变量将被加入到Variable
+2. **不允许未声明变量：**这种情况下，必须在在解析之前使用addVariable()方法加入变量。如果遇到未声明变量，将抛出ParseException 异常。如果你希望限制一个变量出现在表达式中，这个选项是很有用的。
