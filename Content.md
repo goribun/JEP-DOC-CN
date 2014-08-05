@@ -103,3 +103,17 @@ JEP是一个用于解析和计算数学表达式的Java类库。通过使用这�
 
 5.快速重复计算
 ----
+当在没有重复解析表达式而变量的值改变的时候执行重复计算表达式是可能的。当然，这比重复解析每次需要的计算要快的多。<br>
+下面的代码展示addVariable(String,Object)和evaluate()方法如何重复调用去改变变量的值以及重复计算表达式。<br>
+<code>
+		// add variable to allow parsing
+		jep.addVariable("x", 0);
+		jep.parse("2*x-3");
+		// evaluate expression for x = 0 to x = 99
+		for (int i = 0; i < 100; i++) {
+			// update the value of x
+			jep.addVariable("x", i);
+			// print the result
+			System.out.println("Value at x = " + i + ": " + jep.evaluate());
+		}
+</code>
