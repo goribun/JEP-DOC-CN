@@ -155,6 +155,7 @@ Jep可以同时处理多个表达式。简单的方法是在多个字符串中�
 		
 
 另一种方法允许所有的表达式包含在一个单独的字符串中。一系列等式可以使用Jep.initMultiParse(String s)方法从一个单独的字符串或者Reader之中，Jep.initMultiParse(Reader r)和continueParsing()允许所有的表达式包含在一个字符串之中。等式用分号隔开，解析器通过initMultiParse初始化，表达式通过使用continueParsing()轮流读。例如：
+		
 		Jep jep = new Jep();
 		String s = "x=1; y=2; x+y";
 		jep.initMultiParse(s);
