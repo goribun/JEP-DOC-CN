@@ -221,3 +221,12 @@ Jep可以同时处理多个表达式。简单的方法是在多个字符串中�
 
 
  
+4.获取变量列表
+----
+如果你解析一个有未知变量（当允许未声明选项开启），你可能需要知道哪个变量在表达式中。有两种方式取得变量列表。<br>
+第一种是使用getVariableTable方法。通过返回的变量表你接下来可以在解析期间检查哪一变量已经被添加。特别是 VariableTable.getVariables()方法返回所有变量的list。VariableTable类中的toString()方法将提供一个可打印的list。<br>
+第二种方法是在解析表达式后使用 TreeAnalyzer类来检查表达式树。你可以查看JavaDoc文档来获取更多信息。<br>
+
+5.变量观察者
+----
+ Variable类实现了观察者模式。当变量值改变时允许对象被通知。使用 Variable.addObserver(Observer)方法注册一个类成为变量的观察者。VariableTable还可以被观察去检查新变量。 VariableTableObserver使得观察VariableTable和它的变量变得容易。<br>
