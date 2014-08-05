@@ -140,3 +140,16 @@ JEP是一个用于解析和计算数学表达式的Java类库。通过使用这�
 8.处理多个表达式
 ----
 Jep可以同时处理多个表达式。简单的方法是在多个字符串中多次调用Jep.parse()方法。方法返回一个Node类型的对象表示表达式树。这些节点可以被存储用来以后使用或者使用Jep.evaluate(Node n)方法计算。<br>
+		
+			Jep jep = new Jep();
+		try {
+			Node n1 = jep.parse("y=x^2");
+			Node n2 = jep.parse("z=x+y");
+			for (double x = 0.0; x <= 1.0; x += 0.1) {
+				jep.addVariable("x", x);
+				Object value1 = jep.evaluate(n1);
+				Object value2 = jep.evaluate(n2);
+			}
+		} catch (JepException e) {
+		}
+		
