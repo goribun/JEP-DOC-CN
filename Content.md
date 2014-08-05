@@ -189,5 +189,35 @@ Jep可以同时处理多个表达式。简单的方法是在多个字符串中�
 3.赋值 
 ----
 赋值允许变量的值通过使用“=”操作符设置，所以通过这种方式赋值是可能的：x = 3；在表达式中使用赋值例如：y = x^2；此时y的值为9。赋值是默认开启的。调用 setAllowAssignment(boolean)方法可以关闭赋值特性。为了Jep能够解析赋值等式，必须调用 setAllowUndeclared(true)方法。<br>
-**重要：**解析被赋值的变量后，必须调用 evaluate()方法。
+**重要：**解析被赋值的变量后，必须调用 evaluate()方法。<br>
+
+		// standard initialisation
+		Jep j = new Jep();
+		j.setAllowUndeclared(true);
+
+		// switch assignment facilities on
+		j.setAllowAssignment(true);
+
+		j.parse("x=3");
+		// evaluate it - no need to save the value returned
+		try {
+			j.evaluate();
+		} catch (EvaluationException e) {
+		}
+
+		j.parse("y=2");
+		try {
+			j.evaluate();
+		} catch (EvaluationException e) {
+		}
+
+		j.parse("x^y");
+		try {
+			Object val3 = j.evaluate();
+			System.out.println("Value is " + val3);
+		} catch (EvaluationException e) {
+		}
+		
+
+
  
