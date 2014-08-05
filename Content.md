@@ -79,8 +79,8 @@ padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ; "><tbody><tr><td style="width:34.5
 4.计算方法
 ----
 三个用于计算表达式的方法：
--Object evaluate()：计算最后解析的表达式并作为对象返回结果。
--Object evaluate(Node root)：通过根节点和计算解析表达式并作为对象返回结果。
--double evaluateD()：计算最后解析的表达式并作为double类型返回结果，如果结果不能转换为double类型，将抛出EvaluationException异常。
--
+- Object evaluate()：计算最后解析的表达式并作为对象返回结果。
+- Object evaluate(Node root)：通过根节点和计算解析表达式并作为对象返回结果。
+- double evaluateD()：计算最后解析的表达式并作为double类型返回结果，如果结果不能转换为double类型，将抛出EvaluationException异常。
+
 double evaluateD()：计算最后解析的表达式并作为double类型返回结果，如果结果不能转换为double类型，将抛出EvaluationException异常。
