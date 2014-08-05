@@ -100,3 +100,6 @@ JEP是一个用于解析和计算数学表达式的Java类库。通过使用这�
 - double evaluateD()：计算最后解析的表达式并作为double类型返回结果，如果结果不能转换为double类型，将抛出EvaluationException异常。
 
 你可能总是不知道表达式结果类型。例如，它依赖表达式解析可能是Double，Vector，Boolean或者String。你可以用instanceof操作符去确定结果类型，然后把结果转换为相应的类。
+
+5.快速重复计算
+----
