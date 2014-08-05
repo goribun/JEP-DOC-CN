@@ -117,3 +117,12 @@ JEP是一个用于解析和计算数学表达式的Java类库。通过使用这�
 			System.out.println("Value at x = " + i + ": " + jep.evaluate());
 		}
 		
+
+ 你可以在任何计算器包括RealEvaluate()中使用快速重复计算。<br>
+
+6.Decimal运算
+----
+ 在Jep 3中，使用Decimal运算计算表达式已经成为可能。这种数据类型在BigDecimal而不是double模式中表示数字。<br>
+  简单地使用下面的代码构建一个新的Jep实例。<br>
+		 	jep = new Jep(new BigDecComponents());
+
