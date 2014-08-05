@@ -183,3 +183,11 @@ Jep可以同时处理多个表达式。简单的方法是在多个字符串中�
 在解析期间，解析器查找是否存在变量。Jep.setAllowUndeclared(boolean flag)为未声明变量设置行为：
  1. **允许未声明变量 (默认)：**当解析表达式时，未声明变量将被加入到Variable
  2. **不允许未声明变量：**这种情况下，必须在在解析之前使用addVariable()方法加入变量。如果遇到未声明变量，将抛出ParseException 异常。如果你希望限制一个变量出现在表达式中，这个选项是很有用的。
+ 
+在计算期间，变量的值将是可被检索的。如果值未定义（null），将抛出EvaluationException异常。如果没有使用 addVariable()设置变量值，null值将会出现。特别是在allowUndeclared设置为true，在解析期间创建变量。这个行为可以通过调用方法 StandardEvaluator.setTrapNullValues(boolean flag)来改变。设置默认值可以通过调用The Jep.setDefaultValue(Object)来实现。<br>
+
+3.赋值 
+----
+赋值允许变量的值通过使用“=”操作符设置，所以通过这种方式赋值是可能的：x = 3；在表达式中使用赋值例如：y = x^2；此时y的值为9。赋值是默认开启的。调用 setAllowAssignment(boolean)方法可以关闭赋值特性。为了Jep能够解析赋值等式，必须调用 setAllowUndeclared(true)方法。<br>
+**重要：**解析被赋值的变量后，必须调用 evaluate()方法。
+ 
