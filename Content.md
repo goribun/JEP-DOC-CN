@@ -73,7 +73,25 @@ JEP是一个用于解析和计算数学表达式的Java类库。通过使用这�
 3.默认设置
 ----
  如果你通过使用默认设置创建一个Jep实例，你可以解析带有以下函数列表中的函数的所以功能，你也可以使用以下常量：
- <table ><tbody><tr><td >pi</td><td >3.1415…&nbsp;圆的周长比圆的直径（Math.PI）</td></tr><tr><td >e</td><td >2.718…&nbsp;双精度欧拉常数（Math.E）</td></tr><tr><td >true</td><td >布尔常量（Boolean.TRUE）</td></tr><tr><td ></td><td ><p >布尔常量（Boolean.FALSE）</td></tr><tr><td >i</td><td >虚数单位</td></tr></tbody></table>
+ <table >
+ <tbody>
+ <tr>
+ <td >pi</td><td >3.1415…&nbsp;圆的周长比圆的直径（Math.PI）</td>
+ </tr>
+ <tr>
+ <td >e</td><td >2.718…&nbsp;双精度欧拉常数（Math.E）</td>
+ </tr>
+ <tr>
+ <td >true</td><td >布尔常量（Boolean.TRUE）</td>
+ </tr>
+ <tr>
+ <td >false</td><td ><p >布尔常量（Boolean.FALSE）</td>
+ </tr>
+ <tr>
+ <td >i</td><td >虚数单位</td>
+ </tr>
+ </tbody>
+ </table>
 4.计算方法
 ----
 三个用于计算表达式的方法：
